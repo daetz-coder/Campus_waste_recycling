@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  session:
+    store-type: redis
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/secondhand?useSSL=false&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    druid:
+      max-active: 8
+      initial: 8
+      max-wait: 30000
+      min-init: 8
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+      connect-timeout: 30000
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 8
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-location: /mapper/*.xml
+
+mvc:
+  view:
+    prefix: /
+    suffix: .html
+
+#files:
+#  upload:
+#    path: src/main/resources/Content
+
+files:
+  upload:
+    path: ${user.dir}/src/main/resources/Content/

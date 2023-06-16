@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cshand.mapper.ProductMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.cshand.entity.Product">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="orderNo" column="order_no" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="total" column="total" jdbcType="DECIMAL"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+            <result property="tradeNo" column="trade_no" jdbcType="VARCHAR"/>
+            <result property="orderStatus" column="order_status" jdbcType="TINYINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,order_no,user_id,
+        total,create_time,pay_time,
+        trade_no,order_status,name,
+        phone,address,comment
+    </sql>
+</mapper>
